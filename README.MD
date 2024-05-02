@@ -1,6 +1,8 @@
-# A python version of iDSBins for human BREAK-ins sequencing data analysis
+# A python version of iDSBins
 
-This project is a python version of iDSBins for human BREAK-ins sequencing data analysis.
+**This project is a python version of iDSBins for human BREAK-ins sequencing data analysis.**
+
+Inspiration: https://github.com/gucascau/iDSBins.git
 
 ## Installation
 
