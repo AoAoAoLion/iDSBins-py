@@ -1,80 +1,79 @@
-from Bio import SeqIO
+#!/usr/bin/python3
+
+import Bio.SeqIO as SeqIO
+from collections import Counter
+import random
 import argparse
-"""
-# README:
-# This script is designed to process paired-end FASTQ files by filtering reads based on provided index sequences.
-# It takes forward and reverse FASTQ files as input along with the corresponding forward and reverse index sequences.
-# The script outputs two sets of FASTQ files:
-# 1. Reads where both the forward and reverse reads start with the specified indices.
-# 2. Reads where either the forward or reverse read does not start with the specified indices.
-#
-# Usage:
-# python Extract_fastq_with_index.py -f <forward.fastq> -r <reverse.fastq> -i <forward_index> -g <reverse_index> -o <output_prefix>
-#
-# Arguments:
-# -f, --ffastq: Forward reads file in FASTQ format.
-# -r, --Rfastq: Reverse reads file in FASTQ format.
-# -i, --forward_index: Index sequence at the start of the forward reads.
-# -g, --reverse_index: Index sequence at the start of the reverse reads.
-# -o, --output: Prefix for the output files.
-#
-# Output files:
-# <output_prefix>.R1.fastq: Forward reads with correct index.
-# <output_prefix>.R2.fastq: Reverse reads with correct index.
-# <output_prefix>.unindex.R1.fastq: Forward reads without correct index.
-# <output_prefix>.unindex.R2.fastq: Reverse reads without correct index.
-"""
-
-
-def print_help():
-    print("""
-    Usage:
-        python Extract_fastq_with_index.py -f <forward.fastq> -r <reverse.fastq> -i <forward_index> -g <reverse_index> -o <output_prefix>
-
-    Description:
-        This script processes paired-end FASTQ files by filtering reads based on provided index sequences. It outputs two sets of FASTQ files:
-        1. Reads where both the forward and reverse reads start with the specified indices.
-        2. Reads where either the forward or reverse read does not start with the specified indices.
-
-    Arguments:
-        -f, --ffastq: Forward reads file in FASTQ format.
-        -r, --Rfastq: Reverse reads file in FASTQ format.
-        -i, --forward_index: Index sequence at the start of the forward reads.
-        -g, --reverse_index: Index sequence at the start of the reverse reads.
-        -o, --output: Prefix for the output files.
-
-    Output files:
-        <output_prefix>.R1.fastq: Forward reads with correct index.
-        <output_prefix>.R2.fastq: Reverse reads with correct index.
-        <output_prefix>.unindex.R1.fastq: Forward reads without correct index.
-        <output_prefix>.unindex.R2.fastq: Reverse reads without correct index.
-    """)
-
+import gzip
+import os
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Process FASTQ files.')
     parser.add_argument('-f', '--ffastq', required=True, help='Forward reads (FASTQ format)')
     parser.add_argument('-r', '--Rfastq', required=True, help='Reverse reads (FASTQ format)')
-    parser.add_argument('-i', '--forward_index', required=True, help='Forward index')
-    parser.add_argument('-g', '--reverse_index', required=True, help='Reverse index')
-    parser.add_argument('-o', '--output', required=True, help='Output file prefix')
+    parser.add_argument('-i', '--forward_index', help='Forward index')
+    parser.add_argument('-g', '--reverse_index', help='Reverse index')
+    parser.add_argument('-o', '--output_dir', required=True, help='Output directory')
     return parser.parse_args()
+
+def open_fastq(file_path):
+    if file_path.endswith('.gz'):
+        return gzip.open(file_path, 'rt')  # 'rt' mode for reading text from a gzipped file
+    else:
+        return open(file_path, 'r')
+
+def open_output_fastq(output_dir, base_name, suffix):
+    output_path = os.path.join(output_dir, f"{base_name}{suffix}.fastq.gz")
+    return gzip.open(output_path, 'wt')  # 'wt' mode for writing text to a gzipped file
+
+def extract_index(fastq_file):
+    # 根据文件扩展名��定打开方式
+    open_func = gzip.open if fastq_file.endswith('.gz') else open
+    # 打开并读取FASTQ文件
+    with open_func(fastq_file, "rt") as fq:  # 使用"rt"模式以文本方式读取
+        # 读取所有序列记录
+        all_records = list(SeqIO.parse(fq, "fastq"))
+        # 随机选择1000个序列记录
+        selected_records = random.sample(all_records, 1000)
+
+    # 提取每个记录的序列
+    sequences = [str(record.seq) for record in selected_records]
+
+    # 使用Counter来找出最常见的序列
+    most_common_sequence = Counter(sequences).most_common(1)[0][0]
+    # 获取最常见序列的前三个字母
+    first_three_letters = most_common_sequence[:3]
+    return first_three_letters 
 
 def main():
     args = parse_args()
-    # If the user needs help, print the detailed help information
-    if args.help:
-        print_help()
-        return
-    # Open input FASTQ files
-    forward_reads = SeqIO.parse(args.ffastq, "fastq")
-    reverse_reads = SeqIO.parse(args.Rfastq, "fastq")
 
-    # Open output files
-    with open(args.output + '.R1.fastq', 'w') as pair1, \
-         open(args.output + '.R2.fastq', 'w') as pair2, \
-         open(args.output + '.unindex.R1.fastq', 'w') as upair1, \
-         open(args.output + '.unindex.R2.fastq', 'w') as upair2:
+    # 如果没有提供索引，则自动从第一个文件中提取
+    if args.forward_index is None or args.reverse_index is None:
+        if args.ffastq:
+            args.forward_index = extract_index(args.ffastq)
+            print(f"自动选择的前向索引: {args.forward_index}")
+        if args.Rfastq:
+            args.reverse_index = extract_index(args.Rfastq)
+            print(f"自动选择的反向索引: {args.reverse_index}")
+
+    # Ensure output directory exists
+    if not os.path.exists(args.output_dir):
+        os.makedirs(args.output_dir)
+
+    # Extract base names without extensions
+    base_name_f = os.path.splitext(os.path.splitext(os.path.basename(args.ffastq))[0])[0]
+    base_name_r = os.path.splitext(os.path.splitext(os.path.basename(args.Rfastq))[0])[0]
+
+    # Open input FASTQ files with potential gzip handling
+    forward_reads = SeqIO.parse(open_fastq(args.ffastq), "fastq")
+    reverse_reads = SeqIO.parse(open_fastq(args.Rfastq), "fastq")
+
+    # Open output files with gzip compression and modified names
+    with open_output_fastq(args.output_dir, base_name_f, '_index') as pair1, \
+         open_output_fastq(args.output_dir, base_name_r, '_index') as pair2, \
+         open_output_fastq(args.output_dir, base_name_f, '_unindex') as upair1, \
+         open_output_fastq(args.output_dir, base_name_r, '_unindex') as upair2:
 
         # Process each pair of reads
         for read1, read2 in zip(forward_reads, reverse_reads):
