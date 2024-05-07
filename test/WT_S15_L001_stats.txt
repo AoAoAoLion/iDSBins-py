@@ -1,0 +1,6 @@
+#File	test/WT_S15_L001_R1_001_index.fastq.gz	test/WT_S15_L001_R2_001_index.fastq.gz
+#Total	2992370
+#Matched	23360	0.78065%
+#Name	Reads	ReadsPct
+PhiX_read2_adapter	23290	0.77831%
+PhiX_read1_adapter	70	0.00234%

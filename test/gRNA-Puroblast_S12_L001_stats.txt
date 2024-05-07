@@ -1,0 +1,6 @@
+#File	test/gRNA-Puroblast_S12_L001_R1_001_index.fastq.gz	test/gRNA-Puroblast_S12_L001_R2_001_index.fastq.gz
+#Total	2591564
+#Matched	61399	2.36919%
+#Name	Reads	ReadsPct
+PhiX_read2_adapter	61291	2.36502%
+PhiX_read1_adapter	108	0.00417%

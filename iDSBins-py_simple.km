@@ -15,24 +15,14 @@
                 "children": [
                     {
                         "data": {
-                            "text": "Extract fastq with index"
-                        },
-                        "children": []
-                    },
-                    {
-                        "data": {
-                            "id": "d12skvmy2cg0",
-                            "created": 1715022055531,
-                            "text": "Remove PhiX adapter"
+                            "id": "d13p0f0h5yw0",
+                            "created": 1715113548687,
+                            "text": "Extract_fastq_with_index.py"
                         },
                         "children": [
                             {
                                 "data": {
-                                    "text": "bbmap/bbduk.sh",
-                                    "layout_right_offset": {
-                                        "x": 18,
-                                        "y": 17
-                                    }
+                                    "text": "Extract fastq with index"
                                 },
                                 "children": []
                             }
@@ -40,34 +30,59 @@
                     },
                     {
                         "data": {
-                            "id": "d12ssk4gsi00",
-                            "created": 1715022657382,
-                            "text": "Fastp"
+                            "id": "d13p149woq00",
+                            "created": 1715113603677,
+                            "text": "Remove_PhiX.py"
                         },
                         "children": [
                             {
                                 "data": {
-                                    "id": "d12ssmblofc0",
-                                    "created": 1715022662167,
-                                    "text": "trim adapter"
+                                    "id": "d12skvmy2cg0",
+                                    "created": 1715022055531,
+                                    "text": "Remove PhiX adapter",
+                                    "layout_filetree-down_offset": {
+                                        "x": 60,
+                                        "y": 0
+                                    }
                                 },
-                                "children": []
-                            },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "text": "bbmap/bbduk.sh",
+                                            "layout_right_offset": {
+                                                "x": 18,
+                                                "y": 17
+                                            }
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "d13po6eunio0",
+                            "created": 1715115410705,
+                            "text": "Merge_reads.py"
+                        },
+                        "children": [
                             {
                                 "data": {
-                                    "id": "d12st93mny80",
-                                    "created": 1715022711751,
-                                    "text": "deduplicate"
+                                    "id": "d13pocwqtlc0",
+                                    "created": 1715115424848,
+                                    "text": "Merge pair-end reads"
                                 },
-                                "children": []
-                            },
-                            {
-                                "data": {
-                                    "id": "d12stbz39fc0",
-                                    "created": 1715022718007,
-                                    "text": "merge reads"
-                                },
-                                "children": []
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "d13pon3i4zk0",
+                                            "created": 1715115447025,
+                                            "text": "pear"
+                                        },
+                                        "children": []
+                                    }
+                                ]
                             }
                         ]
                     }
