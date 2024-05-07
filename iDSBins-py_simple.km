@@ -1,0 +1,98 @@
+{
+    "root": {
+        "data": {
+            "id": "d12rziydb2g0",
+            "created": 1715020382276,
+            "text": "iDSBins_simple_pipeline.py"
+        },
+        "children": [
+            {
+                "data": {
+                    "id": "d12rzp0fk8g0",
+                    "created": 1715020395461,
+                    "text": "Quality_Control.py"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "text": "Extract fastq with index"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "d12skvmy2cg0",
+                            "created": 1715022055531,
+                            "text": "Remove PhiX adapter"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "text": "bbmap/bbduk.sh",
+                                    "layout_right_offset": {
+                                        "x": 18,
+                                        "y": 17
+                                    }
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "d12ssk4gsi00",
+                            "created": 1715022657382,
+                            "text": "Fastp"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "d12ssmblofc0",
+                                    "created": 1715022662167,
+                                    "text": "trim adapter"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "d12st93mny80",
+                                    "created": 1715022711751,
+                                    "text": "deduplicate"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "d12stbz39fc0",
+                                    "created": 1715022718007,
+                                    "text": "merge reads"
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "d12spv19b5k0",
+                    "created": 1715022446040,
+                    "text": "Alignmet.py"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "d12spyzcu000",
+                            "created": 1715022454632,
+                            "text": "Align.PairwiseAligner"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    "template": "filetree",
+    "theme": "fresh-blue",
+    "version": "1.4.43"
+}
