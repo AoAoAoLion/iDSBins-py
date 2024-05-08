@@ -80,6 +80,82 @@
                                             "created": 1715115447025,
                                             "text": "pear"
                                         },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "d14dj5qchyo0",
+                                                    "created": 1715182724041,
+                                                    "text": "assembled"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "d14dj954bz40",
+                                                    "created": 1715182731464,
+                                                    "text": "unassembled"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "d14djbjcixs0",
+                                                            "created": 1715182736678,
+                                                            "text": "Forward reads"
+                                                        },
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "d14djgol5g80",
+                                                            "created": 1715182747879,
+                                                            "text": "Reverse reads"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "d14din8ugs00",
+                            "created": 1715182683800,
+                            "text": "fastqtofasta.py"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "d14dj5qchyo0",
+                                    "created": 1715182724041,
+                                    "text": "assembled"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "d14dj954bz40",
+                                    "created": 1715182731464,
+                                    "text": "unassembled"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "d14djbjcixs0",
+                                            "created": 1715182736678,
+                                            "text": "Forward reads"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "d14djgol5g80",
+                                            "created": 1715182747879,
+                                            "text": "Reverse reads"
+                                        },
                                         "children": []
                                     }
                                 ]
@@ -92,7 +168,7 @@
                 "data": {
                     "id": "d12spv19b5k0",
                     "created": 1715022446040,
-                    "text": "Alignmet.py"
+                    "text": "Alignment.py"
                 },
                 "children": [
                     {
