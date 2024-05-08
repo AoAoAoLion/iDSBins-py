@@ -33,22 +33,19 @@ def merge_unassembled_reads(args):
         reverse_reads = SeqIO.to_dict(SeqIO.parse(r_fasta, "fasta"))
 
     # Merge reads based on sequence identifier
-    merged_reads = {}
+    merged_reads = []
     for seq_id in forward_reads:
         if seq_id in reverse_reads:
-            merged_reads[seq_id] = (forward_reads[seq_id].seq, reverse_reads[seq_id].seq)
-
+            # 创建一个新的SeqRecord，将正向和反向序列合并
+            merged_sequence = forward_reads[seq_id].seq + reverse_reads[seq_id].seq
+            record = SeqRecord(merged_sequence, id=seq_id, description="")
+            merged_reads.append(record)
+            
     return merged_reads
 
 def write_merged_reads(args, merged_reads):
     sample_id = args.sample_id
     output_file = f"{sample_id}_index_unmappedphix_merged.unassembled.merged_by_seqid.fasta.gz"
-
-    # Create SeqRecord objects for each merged read
-    records = []
-    for seq_id, sequences in merged_reads.items():
-        record = SeqRecord(sequences[0] + sequences[1], id=seq_id, description="")
-        records.append(record)
 
     # Write merged reads to a gzipped fasta file
     with gzip.open(output_file, "wt") as output_fasta:
