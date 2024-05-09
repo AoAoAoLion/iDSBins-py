@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-import sys
+import argparse
 import gzip
 from Bio import SeqIO
 
@@ -19,15 +19,19 @@ def fastq_to_fasta(input_fastq, output_fasta):
     with fastq_open(input_fastq, "rt") as fastq_file, fasta_open(output_fasta, "wt") as fasta_file:
         records = SeqIO.parse(fastq_file, "fastq")
         for rec in records:
-            SeqIO.write(rec , fasta_file, "fasta")
+            SeqIO.write(rec, fasta_file, "fasta")
 
 if __name__ == "__main__":
-    if len(sys.argv) != 3:
-        print("************************************************************************")
-        print("Usage: python fastq2fasta.py <input_fastq> <output_fasta>")
-        print("************************************************************************")
-        sys.exit(1)
+    parser = argparse.ArgumentParser(description="Convert FASTQ to FASTA")
+    parser.add_argument("-i", "--input", required=True, help="Input FASTQ file (optionally gzipped)")
+    parser.add_argument("-o", "--output", help="Output FASTA file (optionally gzipped)")
+    args = parser.parse_args()
 
-    input_fastq = sys.argv[1]
-    output_fasta = sys.argv[2]
-    fastq_to_fasta(input_fastq, output_fasta)
+    # Automatically change the output file's suffix if not specified
+    if not args.output:
+        if args.input.endswith(".gz"):
+            args.output = args.input[:-9] + ".fasta.gz"  # Change .fastq.gz to .fasta.gz
+        else:
+            args.output = args.input[:-6] + ".fasta"  # Change .fastq to .fasta
+
+    fastq_to_fasta(args.input, args.output)
