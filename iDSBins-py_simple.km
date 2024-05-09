@@ -168,14 +168,14 @@
                 "data": {
                     "id": "d12spv19b5k0",
                     "created": 1715022446040,
-                    "text": "Alignment.py"
+                    "text": "Detection.py"
                 },
                 "children": [
                     {
                         "data": {
                             "id": "d12spyzcu000",
                             "created": 1715022454632,
-                            "text": "Align.PairwiseAligner"
+                            "text": "Run_blastn.py"
                         },
                         "children": []
                     }

@@ -1,9 +1,5 @@
 import os
 import argparse
-import subprocess
-import gzip
-from Bio import SeqIO
-from Bio.SeqRecord import SeqRecord
 
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Run PEAR with specified parameters.")
@@ -24,11 +20,11 @@ def run_command(command):
 
 def main():
     args = parse_arguments()
+
     command = construct_command(args)
     run_command(command)
     gzip = gzip_command(args)
     run_command(gzip)
-
 
 if __name__ == "__main__":
     main()

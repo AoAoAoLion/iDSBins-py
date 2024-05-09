@@ -1,6 +1,5 @@
 import os
 import argparse
-import subprocess
 
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Run bbduk.sh with specified parameters.")
