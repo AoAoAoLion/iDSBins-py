@@ -3,7 +3,8 @@
 **This project is a python version of iDSBins for human BREAK-ins sequencing data analysis.**
 
 # Citation
-https://zenodo.org/records/8003638
+https://zenodo.org/records/8003638  
+
 https://github.com/gucascau/iDSBins.git
 
 ## Installation
