@@ -26,12 +26,13 @@ for i, (data, color, label) in enumerate(zip([data1, data2], ['r', 'b'], ['gRNA'
     ax.bar(positions, chromosome_counts.reindex(data1[1].unique(), fill_value=0), width=bar_width, color=color, alpha=0.5, label=label)
 
 # 添加染色体标签并设置字体大小
-ax.set_xlabel('Chromosome', fontsize=7)  
+ax.set_xlabel('Chromosome')  
 ax.set_ylabel('Number of Rows')
 
 # 设置x轴刻度标签并旋转标签角度
 ax.set_xticks([x + bar_width / 2 for x in index])
-ax.set_xticklabels(data1[1].unique(), rotation=45)
+ax.set_xticklabels(data1[1].unique(), rotation=45 )
+ax.xaxis.set_tick_params(labelsize=4)
 
 # 设置图形属性
 ax.legend(loc='upper right')
