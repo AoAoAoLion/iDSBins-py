@@ -177,7 +177,75 @@
                             "created": 1715022454632,
                             "text": "Run_blastn.py"
                         },
-                        "children": []
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "d14dj5qchyo0",
+                                    "created": 1715182724041,
+                                    "text": "assembled"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "d165qui7m280",
+                                            "created": 1715363877551,
+                                            "text": "measure mapped reads"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "d14dj954bz40",
+                                    "created": 1715182731464,
+                                    "text": "unassembled"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "d14djbjcixs0",
+                                            "created": 1715182736678,
+                                            "text": "Forward reads"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "d14djgol5g80",
+                                            "created": 1715182747879,
+                                            "text": "Reverse reads"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "d166fk9qaxs0",
+                            "created": 1715365814375,
+                            "text": "Detect_Insertion.py"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "d168hhjj6p40",
+                                    "created": 1715371607385,
+                                    "text": "assembled reads"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "d168hllvvdc0",
+                                    "created": 1715371616235,
+                                    "text": "unassembled reads"
+                                },
+                                "children": []
+                            }
+                        ]
                     }
                 ]
             }

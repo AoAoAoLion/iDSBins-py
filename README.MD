@@ -11,5 +11,3 @@ https://github.com/gucascau/iDSBins.git
 
 This project requires Python 3.8 or later.
 This project is dependent on pear-0.9.11, ncbi-blast-2.14.0+ and biopython
-
-
