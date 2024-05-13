@@ -235,7 +235,133 @@
                                     "created": 1715371607385,
                                     "text": "assembled reads"
                                 },
-                                "children": []
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "d18mwcizve80",
+                                            "created": 1715615387384,
+                                            "text": "confident insertion"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "d18muwmjsu80",
+                                                    "created": 1715615274406,
+                                                    "text": "from another chromosome"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "d18mv7pk8xk0",
+                                                            "created": 1715615298533,
+                                                            "text": "large insertion"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "d18mwlpqu1s0",
+                                                    "created": 1715615407383,
+                                                    "text": "from other location of chrX"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "d18n9rdn61c0",
+                                                            "created": 1715616438446,
+                                                            "text": "query start <= reference start OR query start >= reference  end"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "d18mxidnn1c0",
+                                            "created": 1715615478486,
+                                            "text": "confident non-insertion"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "d18n9c0nwv40",
+                                                    "created": 1715616405009,
+                                                    "text": "$pstart>=$Rstart  && $pstart <=$Rend && $pend>=$Rstart && $pend<=$Rend && $match>=70 && $qlength <=$MinRegionSize"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "d18n9rdn61c0",
+                                                    "created": 1715616438446,
+                                                    "text": "query start >= reference  start"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "d18nak0twwo0",
+                                                    "created": 1715616500798,
+                                                    "text": "query start <= reference end"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "d18n9rdn61c0",
+                                                    "created": 1715616438446,
+                                                    "text": "query end>= reference start"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "d18nak0twwo0",
+                                                    "created": 1715616500798,
+                                                    "text": "query end<= reference end"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "d18ncpnvrqo0",
+                                                    "created": 1715616669804,
+                                                    "text": "Alignment length > 70"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "d18ned6p9zk0",
+                                                    "created": 1715616799372,
+                                                    "text": "Query sequence length <= threshould of size of reads have insertion (insertion size + subject region size)"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "d18nnz251cw0",
+                                            "created": 1715617552263,
+                                            "text": "potential insertion or deletion but need to check original data"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "d18ned6p9zk0",
+                                                    "created": 1715616799372,
+                                                    "text": "Query sequence length > threshould of size of reads have insertion (insertion size + subject region size)"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
                             },
                             {
                                 "data": {
