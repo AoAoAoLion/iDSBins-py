@@ -1,41 +1,44 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# 加载数据
-data1 = pd.read_table('/rsrch4/home/ccp-rsch/swu12/Project#DSBs_Insertion/iDSBins-py/test/gRNA-Puroblast_S12_L001_index_unmappedphix_merged.assembled.fasta.gz.tbl.gz', sep= '\t', header=None)
-data2 = pd.read_table('test/WT_S15_L001_index_unmappedphix_merged.assembled.fasta.gz.tbl.gz', sep= '\t', header=None)
+def load_data_and_plot(file_path_gRNA, file_path_WT, title):
+    data1 = pd.read_table(file_path_gRNA, sep='\t')
+    data2 = pd.read_table(file_path_WT, sep='\t')
 
-# 过滤掉特定的数据行
-data1 = data1[~((data1[1] == 'chrX') & (data1[9] == 134498371) & (data1[10] == 134498450))]
-data2 = data2[~((data2[1] == 'chrX') & (data2[9] == 134498371) & (data2[10] == 134498450))]
+    fig, ax = plt.subplots()
+    bar_width = 0.35
 
-# 设置图形
-fig, ax = plt.subplots()
+    # 对data1的sseqid进行计数并降序排序
+    chromosome_counts1 = data1['sseqid'].value_counts().sort_values(ascending=False)
+    chromosome_counts2 = data2['sseqid'].value_counts().reindex(chromosome_counts1.index, fill_value=0)
 
-# 定义条形图的宽度和位置调整
-bar_width = 0.35
-index = range(len(data1[1].unique()))
+    index = range(len(chromosome_counts1))
 
-# 绘制每个染色体的匹配查询分布
-for i, (data, color, label) in enumerate(zip([data1, data2], ['r', 'b'], ['gRNA', 'WT'])):
-    # 计算每个染色体的行数
-    chromosome_counts = data[1].value_counts().sort_index()
-    # 为每个数据集调整位置
-    positions = [x + bar_width * i for x in index]
-    
-    ax.bar(positions, chromosome_counts.reindex(data1[1].unique(), fill_value=0), width=bar_width, color=color, alpha=0.5, label=label)
+    for i, (chromosome_counts, color, label) in enumerate(zip([chromosome_counts1, chromosome_counts2], ['r', 'b'], ['gRNA', 'WT'])):
+        positions = [x + bar_width * i for x in index]
+        ax.bar(positions, chromosome_counts, width=bar_width, color=color, alpha=0.5, label=label)
 
-# 添加染色体标签并设置字体大小
-ax.set_xlabel('Chromosome')  
-ax.set_ylabel('Number of Rows')
+    ax.set_xlabel('Chromosome')
+    ax.set_ylabel('Number of Rows')
+    ax.set_xticks([x + bar_width / 2 for x in index])
+    ax.set_xticklabels(chromosome_counts1.index, rotation=45)
+    ax.xaxis.set_tick_params(labelsize=6)
+    ax.legend(loc='upper right')
+    ax.set_title(title)
+    plt.show()
 
-# 设置x轴刻度标签并旋转标签角度
-ax.set_xticks([x + bar_width / 2 for x in index])
-ax.set_xticklabels(data1[1].unique(), rotation=45 )
-ax.xaxis.set_tick_params(labelsize=4)
+# 加载并绘制conf_insert数据
+load_data_and_plot('test/gRNA-Puroblast_S12_L001_index_unmappedphix_merged.assembled.fasta.gz.conf_insert.tbl.gz',
+                   'test/WT_S15_L001_index_unmappedphix_merged.assembled.fasta.gz.conf_insert.tbl.gz',
+                   'conf_insert')
 
-# 设置图形属性
-ax.legend(loc='upper right')
+# 加载并绘制conf_non_insert数据
+load_data_and_plot('test/gRNA-Puroblast_S12_L001_index_unmappedphix_merged.assembled.fasta.gz.conf_non_insert.tbl.gz',
+                   'test/WT_S15_L001_index_unmappedphix_merged.assembled.fasta.gz.conf_non_insert.tbl.gz',
+                   'conf_non_insert')
 
-# 显示图形
-plt.show()
+# 加载并绘制potential_insert数据
+load_data_and_plot('test/gRNA-Puroblast_S12_L001_index_unmappedphix_merged.assembled.fasta.gz.potential_insert.tbl.gz',
+                   'test/WT_S15_L001_index_unmappedphix_merged.assembled.fasta.gz.potential_insert.tbl.gz',
+                   'potential_insert')
+
