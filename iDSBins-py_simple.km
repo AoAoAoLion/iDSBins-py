@@ -10,19 +10,22 @@
                 "data": {
                     "id": "d12rzp0fk8g0",
                     "created": 1715020395461,
-                    "text": "Quality_Control.py"
+                    "text": "Quality_Control.py",
+                    "layout": null
                 },
                 "children": [
                     {
                         "data": {
                             "id": "d13p0f0h5yw0",
                             "created": 1715113548687,
-                            "text": "Extract_fastq_with_index.py"
+                            "text": "Extract_fastq_with_index.py",
+                            "layout": null
                         },
                         "children": [
                             {
                                 "data": {
-                                    "text": "Extract fastq with index"
+                                    "text": "Extract fastq with index",
+                                    "layout": null
                                 },
                                 "children": []
                             }
@@ -32,7 +35,8 @@
                         "data": {
                             "id": "d13p149woq00",
                             "created": 1715113603677,
-                            "text": "Remove_PhiX.py"
+                            "text": "Remove_PhiX.py",
+                            "layout": null
                         },
                         "children": [
                             {
@@ -40,10 +44,7 @@
                                     "id": "d12skvmy2cg0",
                                     "created": 1715022055531,
                                     "text": "Remove PhiX adapter",
-                                    "layout_filetree-down_offset": {
-                                        "x": 60,
-                                        "y": 0
-                                    }
+                                    "layout": null
                                 },
                                 "children": [
                                     {
@@ -52,7 +53,8 @@
                                             "layout_right_offset": {
                                                 "x": 18,
                                                 "y": 17
-                                            }
+                                            },
+                                            "layout": null
                                         },
                                         "children": []
                                     }
@@ -64,28 +66,32 @@
                         "data": {
                             "id": "d13po6eunio0",
                             "created": 1715115410705,
-                            "text": "Merge_reads.py"
+                            "text": "Merge_reads.py",
+                            "layout": null
                         },
                         "children": [
                             {
                                 "data": {
                                     "id": "d13pocwqtlc0",
                                     "created": 1715115424848,
-                                    "text": "Merge pair-end reads"
+                                    "text": "Merge pair-end reads",
+                                    "layout": null
                                 },
                                 "children": [
                                     {
                                         "data": {
                                             "id": "d13pon3i4zk0",
                                             "created": 1715115447025,
-                                            "text": "pear"
+                                            "text": "pear",
+                                            "layout": null
                                         },
                                         "children": [
                                             {
                                                 "data": {
                                                     "id": "d14dj5qchyo0",
                                                     "created": 1715182724041,
-                                                    "text": "assembled"
+                                                    "text": "assembled",
+                                                    "layout": null
                                                 },
                                                 "children": []
                                             },
@@ -93,14 +99,16 @@
                                                 "data": {
                                                     "id": "d14dj954bz40",
                                                     "created": 1715182731464,
-                                                    "text": "unassembled"
+                                                    "text": "unassembled",
+                                                    "layout": null
                                                 },
                                                 "children": [
                                                     {
                                                         "data": {
                                                             "id": "d14djbjcixs0",
                                                             "created": 1715182736678,
-                                                            "text": "Forward reads"
+                                                            "text": "Forward reads",
+                                                            "layout": null
                                                         },
                                                         "children": []
                                                     },
@@ -108,7 +116,8 @@
                                                         "data": {
                                                             "id": "d14djgol5g80",
                                                             "created": 1715182747879,
-                                                            "text": "Reverse reads"
+                                                            "text": "Reverse reads",
+                                                            "layout": null
                                                         },
                                                         "children": []
                                                     }
@@ -124,14 +133,16 @@
                         "data": {
                             "id": "d14din8ugs00",
                             "created": 1715182683800,
-                            "text": "fastqtofasta.py"
+                            "text": "fastqtofasta.py",
+                            "layout": null
                         },
                         "children": [
                             {
                                 "data": {
                                     "id": "d14dj5qchyo0",
                                     "created": 1715182724041,
-                                    "text": "assembled"
+                                    "text": "assembled",
+                                    "layout": null
                                 },
                                 "children": []
                             },
@@ -139,14 +150,16 @@
                                 "data": {
                                     "id": "d14dj954bz40",
                                     "created": 1715182731464,
-                                    "text": "unassembled"
+                                    "text": "unassembled",
+                                    "layout": null
                                 },
                                 "children": [
                                     {
                                         "data": {
                                             "id": "d14djbjcixs0",
                                             "created": 1715182736678,
-                                            "text": "Forward reads"
+                                            "text": "Forward reads",
+                                            "layout": null
                                         },
                                         "children": []
                                     },
@@ -154,7 +167,8 @@
                                         "data": {
                                             "id": "d14djgol5g80",
                                             "created": 1715182747879,
-                                            "text": "Reverse reads"
+                                            "text": "Reverse reads",
+                                            "layout": null
                                         },
                                         "children": []
                                     }
@@ -168,28 +182,32 @@
                 "data": {
                     "id": "d12spv19b5k0",
                     "created": 1715022446040,
-                    "text": "Detection.py"
+                    "text": "Detection.py",
+                    "layout": null
                 },
                 "children": [
                     {
                         "data": {
                             "id": "d12spyzcu000",
                             "created": 1715022454632,
-                            "text": "Run_blastn.py"
+                            "text": "Run_blastn.py",
+                            "layout": null
                         },
                         "children": [
                             {
                                 "data": {
                                     "id": "d14dj5qchyo0",
                                     "created": 1715182724041,
-                                    "text": "assembled"
+                                    "text": "assembled",
+                                    "layout": null
                                 },
                                 "children": [
                                     {
                                         "data": {
                                             "id": "d165qui7m280",
                                             "created": 1715363877551,
-                                            "text": "measure mapped reads"
+                                            "text": "measure mapped reads",
+                                            "layout": null
                                         },
                                         "children": []
                                     }
@@ -199,14 +217,16 @@
                                 "data": {
                                     "id": "d14dj954bz40",
                                     "created": 1715182731464,
-                                    "text": "unassembled"
+                                    "text": "unassembled",
+                                    "layout": null
                                 },
                                 "children": [
                                     {
                                         "data": {
                                             "id": "d14djbjcixs0",
                                             "created": 1715182736678,
-                                            "text": "Forward reads"
+                                            "text": "Forward reads",
+                                            "layout": null
                                         },
                                         "children": []
                                     },
@@ -214,7 +234,8 @@
                                         "data": {
                                             "id": "d14djgol5g80",
                                             "created": 1715182747879,
-                                            "text": "Reverse reads"
+                                            "text": "Reverse reads",
+                                            "layout": null
                                         },
                                         "children": []
                                     }
@@ -226,35 +247,40 @@
                         "data": {
                             "id": "d166fk9qaxs0",
                             "created": 1715365814375,
-                            "text": "Detect_Insertion.py"
+                            "text": "Detect_Insertion.py",
+                            "layout": null
                         },
                         "children": [
                             {
                                 "data": {
                                     "id": "d168hhjj6p40",
                                     "created": 1715371607385,
-                                    "text": "assembled reads"
+                                    "text": "assembled reads",
+                                    "layout": null
                                 },
                                 "children": [
                                     {
                                         "data": {
                                             "id": "d18mwcizve80",
                                             "created": 1715615387384,
-                                            "text": "confident insertion"
+                                            "text": "confident insertion",
+                                            "layout": null
                                         },
                                         "children": [
                                             {
                                                 "data": {
                                                     "id": "d18muwmjsu80",
                                                     "created": 1715615274406,
-                                                    "text": "from another chromosome"
+                                                    "text": "from another chromosome",
+                                                    "layout": null
                                                 },
                                                 "children": [
                                                     {
                                                         "data": {
                                                             "id": "d18mv7pk8xk0",
                                                             "created": 1715615298533,
-                                                            "text": "large insertion"
+                                                            "text": "large insertion",
+                                                            "layout": null
                                                         },
                                                         "children": []
                                                     }
@@ -264,14 +290,16 @@
                                                 "data": {
                                                     "id": "d18mwlpqu1s0",
                                                     "created": 1715615407383,
-                                                    "text": "from other location of chrX"
+                                                    "text": "from other location of chrX",
+                                                    "layout": null
                                                 },
                                                 "children": [
                                                     {
                                                         "data": {
                                                             "id": "d18n9rdn61c0",
                                                             "created": 1715616438446,
-                                                            "text": "query start <= reference start OR query start >= reference  end"
+                                                            "text": "query start <= reference start OR query start >= reference  end",
+                                                            "layout": null
                                                         },
                                                         "children": []
                                                     }
@@ -283,14 +311,16 @@
                                         "data": {
                                             "id": "d18mxidnn1c0",
                                             "created": 1715615478486,
-                                            "text": "confident non-insertion"
+                                            "text": "confident non-insertion",
+                                            "layout": null
                                         },
                                         "children": [
                                             {
                                                 "data": {
                                                     "id": "d18n9c0nwv40",
                                                     "created": 1715616405009,
-                                                    "text": "$pstart>=$Rstart  && $pstart <=$Rend && $pend>=$Rstart && $pend<=$Rend && $match>=70 && $qlength <=$MinRegionSize"
+                                                    "text": "$pstart>=$Rstart  && $pstart <=$Rend && $pend>=$Rstart && $pend<=$Rend && $match>=70 && $qlength <=$MinRegionSize",
+                                                    "layout": null
                                                 },
                                                 "children": []
                                             },
@@ -298,7 +328,8 @@
                                                 "data": {
                                                     "id": "d18n9rdn61c0",
                                                     "created": 1715616438446,
-                                                    "text": "query start >= reference  start"
+                                                    "text": "query start >= reference  start",
+                                                    "layout": null
                                                 },
                                                 "children": []
                                             },
@@ -306,7 +337,8 @@
                                                 "data": {
                                                     "id": "d18nak0twwo0",
                                                     "created": 1715616500798,
-                                                    "text": "query start <= reference end"
+                                                    "text": "query start <= reference end",
+                                                    "layout": null
                                                 },
                                                 "children": []
                                             },
@@ -314,7 +346,8 @@
                                                 "data": {
                                                     "id": "d18n9rdn61c0",
                                                     "created": 1715616438446,
-                                                    "text": "query end>= reference start"
+                                                    "text": "query end>= reference start",
+                                                    "layout": null
                                                 },
                                                 "children": []
                                             },
@@ -322,7 +355,8 @@
                                                 "data": {
                                                     "id": "d18nak0twwo0",
                                                     "created": 1715616500798,
-                                                    "text": "query end<= reference end"
+                                                    "text": "query end<= reference end",
+                                                    "layout": null
                                                 },
                                                 "children": []
                                             },
@@ -330,7 +364,8 @@
                                                 "data": {
                                                     "id": "d18ncpnvrqo0",
                                                     "created": 1715616669804,
-                                                    "text": "Alignment length > 70"
+                                                    "text": "Alignment length > 70",
+                                                    "layout": null
                                                 },
                                                 "children": []
                                             },
@@ -338,7 +373,8 @@
                                                 "data": {
                                                     "id": "d18ned6p9zk0",
                                                     "created": 1715616799372,
-                                                    "text": "Query sequence length <= threshould of size of reads have insertion (insertion size + subject region size)"
+                                                    "text": "Query sequence length <= threshould of size of reads have insertion (insertion size + subject region size)",
+                                                    "layout": null
                                                 },
                                                 "children": []
                                             }
@@ -348,14 +384,16 @@
                                         "data": {
                                             "id": "d18nnz251cw0",
                                             "created": 1715617552263,
-                                            "text": "potential insertion or deletion but need to check original data"
+                                            "text": "potential insertion or deletion but need to check original data",
+                                            "layout": null
                                         },
                                         "children": [
                                             {
                                                 "data": {
                                                     "id": "d18ned6p9zk0",
                                                     "created": 1715616799372,
-                                                    "text": "Query sequence length > threshould of size of reads have insertion (insertion size + subject region size)"
+                                                    "text": "Query sequence length > threshould of size of reads have insertion (insertion size + subject region size)",
+                                                    "layout": null
                                                 },
                                                 "children": []
                                             }
@@ -367,7 +405,8 @@
                                 "data": {
                                     "id": "d168hllvvdc0",
                                     "created": 1715371616235,
-                                    "text": "unassembled reads"
+                                    "text": "unassembled reads",
+                                    "layout": null
                                 },
                                 "children": []
                             }
